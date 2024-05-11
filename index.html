@@ -17,45 +17,44 @@
     rel="stylesheet">
 
   <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
 
 </head>
+<script src="https://unpkg.com/scrollreveal"></script>
 
 <body>
 
 
-  <header class="header" data-header>
+  <header class="header header-anim" data-header>
     <div class="container">
 
       <a href="#" class="logo">SwapReads</a>
 
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
-
           <li class="navbar-item">
-            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+            <a href="#home" onclick="lenis.scrollTo('#home')" class="navbar-link" data-nav-link><i class="ri-home-fill"></i> Home</a>
           </li>
-
+      
           <li class="navbar-item">
-            <a href="#benefits" class="navbar-link" data-nav-link>Benefits</a>
+            <a href="#benefits" onclick="lenis.scrollTo('#benefits')" class="navbar-link" data-nav-link><i class="ri-bar-chart-fill"></i> Benefits</a>
           </li>
-
+      
           <li class="navbar-item">
-            <a href="#chapters" class="navbar-link" data-nav-link>Literary Realms</a>
+            <a href="#chapters" onclick="lenis.scrollTo('#chapters')" class="navbar-link" data-nav-link><i class="ri-medal-fill"></i> Literary Realms</a>
           </li>
-
+      
           <li class="navbar-item">
-            <a href="#pricing" class="navbar-link" data-nav-link>Pricing</a>
+            <a href="#pricing" onclick="lenis.scrollTo('#pricing')" class="navbar-link" data-nav-link><i class="ri-price-tag-3-fill"></i> Pricing</a>
           </li>
-
-
-          
+      
           <li class="navbar-item">
-            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+            <a href="#contact" onclick="lenis.scrollTo('#contact')" class="navbar-link" data-nav-link><i class="ri-customer-service-2-fill"></i> Contact</a>
           </li>
-          <li class="navbar-item"></li>
-          <a href="login.html" class="navbar-link">Login/Signup</a>
+      
+          <li class="navbar-item">
+            <a href="login.html" class="navbar-link">Login/Signup</a>
           </li>
-
         </ul>
       </nav>
 
@@ -137,7 +136,7 @@
                 </p>
 
                 <a href="#" class="btn-link">
-                  <span class="span">Read more</span>
+                  <span class="span readmore-anim">Read more</span>
 
                   <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -160,7 +159,7 @@
                 <br>
 
                 <a href="#" class="btn-link">
-                  <span class="span">Read more</span>
+                  <span class="span readmore-anim">Read more</span>
 
                   <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -182,7 +181,7 @@
                 </p>
 
                 <a href="#" class="btn-link">
-                  <span class="span">Read more</span>
+                  <span class="span readmore-anim">Read more</span>
 
                   <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -205,7 +204,7 @@
                 <br>
 
                 <a href="#" class="btn-link">
-                  <span class="span">Read more</span>
+                  <span class="span readmore-anim">Read more</span>
 
                   <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -228,7 +227,7 @@
                 <br>
 
                 <a href="#" class="btn-link">
-                  <span class="span">Read more</span>
+                  <span class="span readmore-anim">Read more</span>
 
                   <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -250,7 +249,7 @@
                 </p>
 
                 <a href="#" class="btn-link">
-                  <span class="span">Read more</span>
+                  <span class="span readmore-anim">Read more</span>
 
                   <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
@@ -432,18 +431,18 @@
 
       <div class="form-fields">
 
-      <label for="bookTitle">Book Title:</label>
+      <label class="form-label" for="bookTitle">Book Title:</label>
       <input type="text" id="bookTitle" name="bookTitle" placeholder="Enter the title of your book" required class="input-field">
 
-      <label for="bookAuthor">Author:</label>
+      <label class="form-label" for="bookAuthor">Author:</label>
       <input type="text" id="bookAuthor" name="bookAuthor" placeholder="Enter the author's name" required class="input-field">
 
-      <label for="yourPrice">Your Price (50% Off):</label>
+      <label class="form-label" for="yourPrice">Your Price (50% Off):</label>
       <input type="number" id="yourPrice" name="yourPrice" placeholder="Enter your desired selling price" required class="input-field">
 
       </div>
 
-      <button type="button" class="btn btn-primary" onclick="alert('Request received! We will let you know as soon as we find a reader with your requested book.')">Connect with a Reader</button>
+      <button type="button" class="btn btn-primary" onclick="validateAndConnect()">Connect with a Reader</button>
     </div>
     
     
@@ -608,40 +607,40 @@
                 <a href="mailto:support@support.com" class="card-link">support@swapreads.com</a>
               </li>
 
-              <li>
+              <!-- <li>
                 <p class="social-list-title h3">Connect SwapReads socials</p>
 
                 <ul class="social-list">
 
                   <li>
-                    <a href="#" class="social-link">
+                    <a href="https://www.facebook.com/" class="social-link">
                       <ion-icon name="logo-facebook"></ion-icon>
                     </a>
                   </li>
 
                   <li>
-                    <a href="#" class="social-link">
+                    <a href="https://twitter.com/?lang=en" class="social-link">
                       <ion-icon name="logo-twitter"></ion-icon>
                     </a>
                   </li>
 
                   <li>
-                    <a href="#" class="social-link">
+                    <a href="https://www.linkedin.com/" class="social-link">
                       <ion-icon name="logo-linkedin"></ion-icon>
                     </a>
                   </li>
 
                   <li>
-                    <a href="#" class="social-link">
+                    <a href="https://www.youtube.com/" class="social-link">
                       <ion-icon name="logo-youtube"></ion-icon>
                     </a>
-                  </li>
+                  </li> -->
 
-                  <li>
-                    <a href="#" class="social-link">
+                  <!-- <li>
+                    <a href="tel:+1234567890" class="social-link">
                       <ion-icon name="logo-whatsapp"></ion-icon>
                     </a>
-                  </li>
+                  </li> -->
 
                 </ul>
               </li>
@@ -664,7 +663,76 @@
     - #FOOTER
   -->
 
-  <footer class="footer">
+  <footer>
+    <div class="foot-top">
+      <div class="foot-left">
+        <div class="desc">
+          <a href="#" class="logo">SwapReads</a>
+          <p>SwapReads.com is the ultimate destination for book lovers seeking to swap and discover new literary gems.
+            Connect with fellow enthusiasts, exchange your favorite reads, and embark on exciting new adventures in the
+            world of literature—all on one convenient platform. Join us and dive into a universe of endless
+            possibilities!
+          </p>
+        </div>
+      </div>
+      <div class="foot-right">
+        <div class="nav-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#chapters">Literary Realms</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="social-links">
+          <h5>Social Links</h5>
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; 2024 All right reserved. Made with ❤ by Guardian Hackers.
+      </p>
+    </div>
+  </footer>
+
+  <!-- <footer class="footer">
     <div class="container">
 
       <div class="footer-top">
@@ -709,7 +777,7 @@
       </div>
 
     </div>
-  </footer>
+  </footer> -->
 
 
 
@@ -723,9 +791,31 @@
   <!-- 
     - ionicon link
   -->
+  <script src="scroll-reveal.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  <!-- Lenis smooth scrolling -->
+  <script>
+    const lenis = new Lenis({
+        duration: 1.8,
+        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        gestureDirection: "vertical",
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 2,
+    });
 
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+
+</script>
 </body>
 
 </html>
